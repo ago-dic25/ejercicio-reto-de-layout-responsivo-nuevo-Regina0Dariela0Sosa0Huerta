@@ -1,0 +1,116 @@
+/*EJERCICIO 1 CON LAS COLUMNAS DE DIFERENTES TAMAÑOS*/
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+}
+
+[class*="columns-"] {
+  padding: 8px;
+  background-color: rgba(0, 128, 255, 0.2);
+  border: 1px solid #ccc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.flex{
+  display: block;
+  width: 100%;
+}
+
+.row{
+  display:flex;
+  flex-wrap: wrap;
+  background: palegreen;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.flex .row * {
+  background: aqua;
+  border: 1px solid deeppink;
+  margin-top: 10px;
+}
+
+/* CELULAR */
+@media screen and (max-width: 768px) {
+  .flex .row {
+    flex-direction: column;
+  }
+    .flex .row > [class*="columns-"] {
+      flex: 1 0 10%;
+    }
+}
+
+/* Tamaños de columnas (100% dividido entre 12) */
+.flex .columns-12 { flex: 0 0 calc((100% / 12) * 12); }
+.flex .columns-11 { flex: 0 0 calc((100% / 12) * 11); }
+.flex .columns-10 { flex: 0 0 calc((100% / 12) * 10); }
+.flex .columns-9  { flex: 0 0 calc((100% / 12) * 9); }
+.flex .columns-8  { flex: 0 0 calc((100% / 12) * 8); }
+.flex .columns-7  { flex: 0 0 calc((100% / 12) * 7); }
+.flex .columns-6  { flex: 0 0 calc((100% / 12) * 6); }
+.flex .columns-5  { flex: 0 0 calc((100% / 12) * 5); }
+.flex .columns-4  { flex: 0 0 calc((100% / 12) * 4); }
+.flex .columns-3  { flex: 0 0 calc((100% / 12) * 3); }
+.flex .columns-2  { flex: 0 0 calc((100% / 12) * 2); }
+.flex .columns-1  { flex: 0 0 calc((100% / 12) * 1); }
+
+/*COMPLETAR*/
+.grid.columns-12 {
+  grid-column: span 12;
+}
+.grid.columns-11 {
+  grid-column: span 11;
+}
+.grid.columns-10 {
+  grid-column: span 10;
+}
+.grid.columns-9{
+  grid-column: span 9;
+}
+.grid.columns-8 {
+  grid-column: span 8;
+}
+.grid.columns-7 {
+  grid-column: span 7;
+}
+.grid.columns-6 {
+  grid-column: span 6;
+}
+.grid.columns-5 {
+  grid-column: span 5;
+}
+.grid.columns-4 {
+  grid-column: span 4;
+}
+.grid.columns-3 {
+  grid-column: span 3;
+}
+.grid.columns-2 {
+  grid-column: span 2;
+}
+.grid.columns-1 {
+  grid-column: span 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*display flex .wrap en .row
+
+/*borde
+ 12 100%
+1 8%
+flex-grid
+todas las clases adentro del contenedor flex
+meter el div de row para ayudar a acomodar todos los elementos en linea
+cada columna debe tener un tamaño la col 12 es 100%, la columna 11 va a ocupar 91.66%, la col 10 83.33%la 1 es 8% y asi esa logica para las demas
+se puede utilizando .flex-grid .columns-12{flex: 1 0 calc((100% / 12) * 11);} para todas
+
+se puede utilizar el template
+ */
+
