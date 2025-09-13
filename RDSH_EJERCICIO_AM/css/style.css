@@ -1,0 +1,87 @@
+/*EJERCICIO 2 GRID CON COLUMNAS ACOMODADAS*/
+/*solo se usaban 11 de las 12 columnas asi q la 12 la puse al final ocupando todo el espacio*/
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 8px;
+}
+
+[class*="columns-"] {
+  padding: 16px;
+  background-color: rgba(0, 128, 255, 0.2);
+  border: 1px solid #ccc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.flex{
+  display:block;
+  width: 100%;
+}
+
+.row{
+  background: palegreen;
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.flex .row *{
+  background: aqua;
+  border: 1px solid deeppink;
+  margin-top: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/*TABLER Y COMPUTADORA*/
+@media (min-width: 577px){
+  .row {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 8px;
+    margin-top: 10px;
+
+  }
+
+  .columns-1 { grid-column: span 4;}
+  .columns-2 { grid-column: span 1; }
+  .columns-3 { grid-column: span 1;  }
+  .columns-4 { grid-column: span 1; }
+  .columns-5 { grid-column: span 1;  }
+  .columns-6 { grid-column: span 1; }
+  .columns-7 { grid-column: span 1; }
+  .columns-8 { grid-column:span 4;}
+  .columns-9 { grid-column: span 1; }
+  .columns-10 { grid-column: span 1; }
+  .columns-11 { grid-column: span 4 }
+  .columns-12 { grid-column: span 5; }
+}
+
+
+/*CELULAR*/
+@media (max-width: 576px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .columns-1 { grid-column: span 1;}
+  .columns-2 { grid-column: span 1; }
+  .columns-3 { grid-column: span 1;  }
+  .columns-4 { grid-column: span 1; }
+  .columns-5 { grid-column: span 1;  }
+  .columns-6 { grid-column: span 1; }
+  .columns-7 { grid-column: span 1; }
+  .columns-8 { grid-column:span 1;}
+  .columns-9 { grid-column: span 1; }
+  .columns-10 { grid-column: span 1; }
+  .columns-11 { grid-column: span 1; }
+  .columns-12 { grid-column: span 1; }
+}
